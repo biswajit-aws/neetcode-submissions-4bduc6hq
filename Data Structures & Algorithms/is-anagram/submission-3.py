@@ -1,0 +1,21 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+      # if(len(s)!=len(t)):
+      #    return False
+      # return sorted(s)==sorted(t)
+      if len(s)!=len(t):
+         return False
+
+      sMap={}
+      tMap={}
+
+      for i in range(0,len(s)):
+         sMap[s[i]]=sMap.get(s[i],0)+1
+         tMap[t[i]]=tMap.get(t[i],0)+1
+
+      for c in sMap:
+         if sMap[c]!=tMap.get(c,0):
+            return False
+
+      return True
+      
